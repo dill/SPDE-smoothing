@@ -1,0 +1,52 @@
+UNDERSTANDING THE STOCHASTIC PARTIAL DIFFERENTIAL EQUATION APPROACH TO
+SMOOTHING
+
+The supplementary material contains code to fit the SPDE model using the INLA
+R package and the mgcv R package.
+
+FILE DESCRIPTIONS
+
+- mgcv_spde_smooth.R: defines the Matern SPDE smooth in a form that can be 
+  used by mgcv, see this file for a full description of how this can be done.
+
+- campylobacterosis.R: fits the Matern SPDE model to the campylobacterosis example
+  using INLA and mgcv, a B-spline basis-penalty smoother is also fit to the data
+  using mgcv. Plots showing each fit are produced.
+
+- aral.R: fit the Matern SPDE model to the aral sea data using INLA and mgcv. A plot
+  showing the mean difference between the models is produced.
+
+- modis.R: fit the Matern SPDE model to the MODIS temperature data using INLA
+  and mgcv. Saves fitted models to modis_run.RData
+
+- modis_postanalysis.R: loads modis_run.RData
+
+RSESSION AND PACKAGE VERSIONS
+
+The above examples were run in an R session with the following sessionInfo():
+
+> sessionInfo()
+R version 3.6.1 (2019-07-05)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows Server >= 2012 x64 (build 9200)
+
+Matrix products: default
+
+locale:
+[1] LC_COLLATE=English_United Kingdom.1252  LC_CTYPE=English_United Kingdom.1252   
+[3] LC_MONETARY=English_United Kingdom.1252 LC_NUMERIC=C                           
+[5] LC_TIME=English_United Kingdom.1252    
+
+attached base packages:
+[1] parallel  stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] tscount_1.4.1 gridExtra_2.3 ggplot2_3.2.0 gamair_1.0-2  INLA_19.07.21 sp_1.3-1      Matrix_1.2-17 mgcv_1.8-28  
+[9] nlme_3.1-140 
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.1         ltsa_1.4.6         rstudioapi_0.10    splines_3.6.1      munsell_0.5.0      colorspace_1.4-1  
+ [7] viridisLite_0.3.0  lattice_0.20-38    rlang_0.4.0        tools_3.6.1        grid_3.6.1         gtable_0.3.0      
+[13] withr_2.1.2        MatrixModels_0.4-1 digest_0.6.20      yaml_2.2.0         lazyeval_0.2.2     tibble_2.1.3      
+[19] crayon_1.3.4       labeling_0.3       compiler_3.6.1     pillar_1.4.2       scales_1.0.0       pkgconfig_2.0.2   
+
